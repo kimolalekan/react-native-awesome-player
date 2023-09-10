@@ -11,7 +11,7 @@ import { StatusBar } from "react-native";
 const dimension = Dimensions.get("screen");
 import Controls from "./VideoControls";
 import Headers from "./VideoHeader";
-import VideoModal from "./modals/VideoModal";
+import VideoModal from "./VideoModal";
 
 let playerStatus = {};
 let action = { play: undefined, pause: undefined, isPlaying: false };
@@ -25,14 +25,14 @@ const VideoPlayer = ({
   progressColor = "#3f3f3f",
   src,
   poster,
+  headers,
   resizeMode = "contain",
   autoplay = false,
   hideControls = false,
-  headers,
   hideNavbar = false,
   backHandler = null,
   backIcon = "chevron-back",
-  showLibrary,
+  showLibrary = false,
   library = [],
   libraryText = "Episodes",
   autoplayLibrary = true,

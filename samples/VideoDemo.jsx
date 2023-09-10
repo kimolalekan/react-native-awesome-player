@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-} from "react-native";
+import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 const dimension = Dimensions.get("screen");
-import { VideoPlayer, action } from "../components/VideoPlayer";
+import { VideoPlayer, action, playerStatus } from "react-native-awesome-player";
 
-const FullscreenDemo = () => {
+const VideoDemo = () => {
   const [sizes, setSizes] = useState(dimension);
 
   useEffect(() => {
@@ -26,28 +20,29 @@ const FullscreenDemo = () => {
 
   const library = [
     {
-      title: "No means no",
+      title: "Sunset",
       poster:
-        "https://image.mux.com/UVOjC3FjDTrpwk02pC00zDPcCSzRiFsUBj003DUZwNXKZQ/thumbnail.png?width=214&height=121&time=13",
+        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1bnNldCUyMGFmcmljYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60",
       video:
-        "https://stream.mux.com/UVOjC3FjDTrpwk02pC00zDPcCSzRiFsUBj003DUZwNXKZQ.m3u8",
-      duration: 193,
+        "https://cdn.videvo.net/videvo_files/video/premium/video0012/large_watermarked/327-1_327-1592_preview.mp4",
+      duration: 55,
     },
     {
-      title: "Animal movie w3 school",
+      title: "Nebula",
       poster:
-        "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
-      video: "https://www.w3schools.com/tags/movie.mp4",
-      duration: 73,
+        "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+      video:
+        "https://cdn.videvo.net/videvo_files/video/premium/getty_124/large_watermarked/istock-950718922_preview.mp4",
+      duration: 0.24,
     },
 
     {
-      title: "A lady dancing",
+      title: "Meditation",
       poster:
-        "https://images.unsplash.com/photo-1612904370193-72d578a78d67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+        "https://images.unsplash.com/photo-1474418397713-7ede21d49118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
       video:
-        "https://theyutesblob.blob.core.windows.net/theyutes/production_id_4109215%20(720p).mp4",
-      duration: 56,
+        "https://joy.videvo.net/videvo_files/video/premium/video0227/large_watermarked/08_Den_Darina_maldiv_15_meditation_preview.mp4",
+      duration: 0.25,
     },
   ];
 
@@ -63,36 +58,24 @@ const FullscreenDemo = () => {
         width={sizes.width}
         height={sizes.height}
         autoplay={true}
-        // src={require("../assets/99.mp4")}
         src={library[0].video}
         poster={library[0].poster}
-        // hideNavbar={true}
-        // hideControls={true}
+        hideNavbar={false}
+        hideControls={false}
         resizeMode="contain"
         showLibrary={true}
         library={library}
         libraryText="Episodes"
       />
-
-      {/* <View style={{ flex: 1, marginBottom: 15 }}>
-        <Card>
-          <Text>Cool</Text>
-        </Card>
-        <BlurredImage
-          width={"100%"}
-          height={240}
-          src="https://images.pexels.com/photos/18022537/pexels-photo-18022537/free-photo-of-parrot.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          blur={100}
-        />
+      <View>
+        <TouchableOpacity onPress={playPause}>
+          {playerStatus.isPlaying ? (
+            <Icon name="play" color={"#fff"} size={30} />
+          ) : (
+            <Icon name="pause" color={"#fff"} size={30} />
+          )}
+        </TouchableOpacity>
       </View>
-      <View style={{ marginBottom: 15 }}>
-        <BlurredImage
-          width={"100%"}
-          height={240}
-          src="https://images.pexels.com/photos/18022537/pexels-photo-18022537/free-photo-of-parrot.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          blur={100}
-        />
-      </View> */}
     </View>
   );
 };
@@ -100,9 +83,8 @@ const FullscreenDemo = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // height: 400,
-    // padding: 15,
-    // marginTop: 100,
+    padding: 15,
+    marginTop: 100,
   },
   buttonGrid: {
     flex: 1,
@@ -112,4 +94,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Test;
+export default VideoDemo;

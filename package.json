@@ -1,20 +1,28 @@
 {
   "name": "react-native-awesome-player",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React native awesome player for audio and video",
   "source": "src/index.js",
   "main": "dist/main.js",
+  "typings": "react-native-awesome-player.d.ts",
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build"
   },
-  "author": "Kim Olalekan <kim.olalekan@gmail.com>",
-  "license": "ISC",
+  "author": "Olalekan <kim.olalekan@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@miblanchard/react-native-slider": "^2.3.1",
     "expo-av": "^13.4.1",
+    "expo-screen-orientation": "^6.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-native": "^0.72.4",
     "react-native-flexbox-grid": "^0.3.2",
+    "react-native-modal": "^13.0.1",
     "react-native-vector-icons": "^10.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
   }
 }
