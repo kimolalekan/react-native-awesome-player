@@ -2,9 +2,14 @@
 
 React native awesome player for video
 
-<img src="/screenshots/1.png" height="300px"><img src="/screenshots/2.png" width="300px">
+[Sample codes here](/samples)
 
-<img src="/screenshots/3.png" height="300px"><img src="/screenshots/4.png" height="300px">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px">
+<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/1.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
+<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/2.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
+<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/3.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
+<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/4.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
+</div>
 
 ### Installation
 
@@ -16,18 +21,18 @@ npm i react-native-awesome-player
 yarn add react-native-awesome-player
 ```
 
-[Sample codes](/samples)
-
 ```jsx
 import { VideoPlayer } from "react-native-awesome-player";
 
 <VideoPlayer
-  title={""}
+  title={"Sample video"}
   radius={10}
   width={360}
   height={240}
   autoplay={true}
-  src={""}
+  src={
+    "https://cdn.videvo.net/videvo_files/video/premium/getty_124/large_watermarked/istock-950718922_preview.mp4"
+  }
   poster={
     "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1bnNldCUyMGFmcmljYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=200&q=60"
   }
