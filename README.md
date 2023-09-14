@@ -4,10 +4,7 @@ React native awesome player for video
 
 [Sample codes here](/samples)
 
-<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/1.png" height="500">
-<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/2.png" height="500">
-<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/3.png" height="500">
-<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/4.png" height="500">
+<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/1.png" height="500"><img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/2.png" height="500"><img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/3.png" height="500"><img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/4.png" height="500">
 
 ### Installation
 
