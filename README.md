@@ -1,8 +1,14 @@
 # React native awesome player
 
-React native awesome player for audio and video
+React native awesome player for video
 
-⚠️ In development
+![Image 1](/screenshots/1.png)
+
+![Image 2](/screenshots/2.png)
+
+![Image 3](/screenshots/3.png)
+
+![Image 4](/screenshots/4.png)
 
 ### Installation
 

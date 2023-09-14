@@ -70,7 +70,7 @@ const Header = ({
             onPress={() => changeScreenOrientation()}
           >
             <Image
-              source={require("./images/screen-rotate.png")}
+              source={require("../assets/screen-rotate.png")}
               style={styles.icon}
             />
           </TouchableOpacity>

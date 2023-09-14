@@ -7,7 +7,6 @@ import {
   Dimensions,
 } from "react-native";
 import { Video } from "expo-av";
-import { StatusBar } from "react-native";
 const dimension = Dimensions.get("screen");
 import Controls from "./VideoControls";
 import Headers from "./VideoHeader";
@@ -25,14 +24,14 @@ const VideoPlayer = ({
   progressColor = "#3f3f3f",
   src,
   poster,
-  headers,
   resizeMode = "contain",
   autoplay = false,
   hideControls = false,
+  headers,
   hideNavbar = false,
   backHandler = null,
   backIcon = "chevron-back",
-  showLibrary = false,
+  showLibrary,
   library = [],
   libraryText = "Episodes",
   autoplayLibrary = true,
@@ -141,7 +140,6 @@ const VideoPlayer = ({
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent barStyle="light-content" />
       <VideoModal
         modal={modal}
         toggleModal={toggleModal}
@@ -215,7 +213,7 @@ const VideoPlayer = ({
         }}
         onLoad={(v) => {
           setDuration(v.durationMillis);
-          setCountdown(Math.round(v.durationMillis / 1000));
+          // setCountdown(Math.round(v.durationMillis / 1000));
           setLoading(false);
 
           autoplay && autoplayLibrary

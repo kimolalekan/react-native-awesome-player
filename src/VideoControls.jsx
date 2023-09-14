@@ -16,11 +16,37 @@ export default function Controls({
   setTiming,
   iconColor = "#fff",
   progressColor = "#3f3f3f",
+  radius,
   showControls,
   showLibrary = false,
   toggleLibrary,
   libraryText = "Episodes",
 }) {
+  const styles = StyleSheet.create({
+    bg: {
+      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      height: 40,
+      margin: 10,
+      marginBottom: 20,
+      paddingLeft: 10,
+      paddingRight: 10,
+      borderRadius: radius,
+    },
+    text: {
+      position: "relative",
+      top: 13,
+      fontSize: 11,
+      color: "white",
+      textAlign: "center",
+    },
+    iconStyle: { position: "relative", top: 10 },
+    thumbStyle: { width: 10, height: 10 },
+    libraryIcon: {
+      position: "relative",
+      top: 10,
+      alignItems: "flex-end",
+    },
+  });
   const playAction = () => {
     const _countdown = countdown * 1000;
     if (duration === _countdown) {
@@ -43,6 +69,7 @@ export default function Controls({
 
   const librarySize = orientation === "landscape" ? 2 : 2;
   const progressSize = orientation === "landscape" ? 7 : 5;
+  const progressLibrarySize = orientation === "landscape" ? 9 : 7;
 
   return (
     <View
@@ -80,7 +107,7 @@ export default function Controls({
             {renderCountDown(countdown ? countdown : 0)}
           </Text>
         </Col>
-        <Col sm={showLibrary ? progressSize : 8}>
+        <Col sm={showLibrary ? progressSize : progressLibrarySize}>
           <Slider
             value={timing}
             maximumValue={Number(duration)}
@@ -113,7 +140,12 @@ export default function Controls({
                 {showLibrary && libraryText ? libraryText : ""}
               </Text>
             ) : (
-              <View style={styles.libraryIcon}>
+              <View
+                style={[
+                  styles.libraryIcon,
+                  { display: showLibrary ? "flex" : "none" },
+                ]}
+              >
                 <Icon name="apps" color="#fff" size={18} />
               </View>
             )}
@@ -123,29 +155,3 @@ export default function Controls({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  bg: {
-    backgroundColor: "rgba(0, 0, 0, 0.1)",
-    height: 40,
-    margin: 10,
-    marginBottom: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderRadius: 40,
-  },
-  text: {
-    position: "relative",
-    top: 13,
-    fontSize: 11,
-    color: "white",
-    textAlign: "center",
-  },
-  iconStyle: { position: "relative", top: 10 },
-  thumbStyle: { width: 10, height: 10 },
-  libraryIcon: {
-    position: "relative",
-    top: 10,
-    alignItems: "flex-end",
-  },
-});
