@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 const dimension = Dimensions.get("screen");
-import { VideoPlayer } from "../components/VideoPlayer";
+import { VideoPlayer } from "react-native-awesome-player";
 
 const FullscreenDemo = () => {
   const [sizes, setSizes] = useState(dimension);
