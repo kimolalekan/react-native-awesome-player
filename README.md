@@ -4,12 +4,10 @@ React native awesome player for video
 
 [Sample codes here](/samples)
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px">
-<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/1.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
-<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/2.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
-<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/3.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
-<div style="background-image: url('https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/4.png'), background-sizing: contain; margin-bottom: 30; height: 300px">&nbsp;</div>
-</div>
+<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/1.png" height="500">
+<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/2.png" height="500">
+<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/3.png" height="500">
+<img src="https://raw.githubusercontent.com/kimolalekan/react-native-awesome-player/main/screenshots/4.png" height="500">
 
 ### Installation
 
