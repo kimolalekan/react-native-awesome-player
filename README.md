@@ -2,8 +2,8 @@
 
 React native awesome player for video
 
-<img src="/screenshots/1.png" width="50%"><img src="/screenshots/2.png" width="50%">
-<img src="/screenshots/3.png" width="50%"><img src="/screenshots/4.png" width="50%">
+<img src="/screenshots/1.png" height="300px"><img src="/screenshots/2.png" width="300px">
+<img src="/screenshots/3.png" height="300px"><img src="/screenshots/4.png" height="300px">
 
 ### Installation
 
