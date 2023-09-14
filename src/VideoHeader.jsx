@@ -70,9 +70,9 @@ const Header = ({
             onPress={() => changeScreenOrientation()}
           >
             {orientation === "portrait" ? (
-              <Icon name={"phone-landscape"} size={30} color={"#fff"} />
+              <Icon name={"phone-landscape-outline"} size={30} color={"#fff"} />
             ) : (
-              <Icon name={"phone-portrait"} size={30} color={"#fff"} />
+              <Icon name={"phone-portrait-outline"} size={30} color={"#fff"} />
             )}
           </TouchableOpacity>
         </Col>
