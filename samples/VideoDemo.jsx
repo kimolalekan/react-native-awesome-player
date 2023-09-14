@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-const dimension = Dimensions.get("screen");
 import { VideoPlayer, action, playerStatus } from "react-native-awesome-player";
 
 const VideoDemo = () => {
-  const [sizes, setSizes] = useState(dimension);
-
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener(
-      "change",
-      ({ window, screen }) => {
-        setSizes(screen);
-      }
-    );
-
-    return () => subscription?.remove();
-  }, []);
-
   const library = [
     {
       title: "Sunset",
@@ -55,8 +40,8 @@ const VideoDemo = () => {
       <VideoPlayer
         title={library[0].title}
         radius={10}
-        width={sizes.width}
-        height={sizes.height}
+        width={360}
+        height={240}
         autoplay={true}
         src={library[0].video}
         poster={library[0].poster}
