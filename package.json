@@ -1,6 +1,6 @@
 {
   "name": "react-native-awesome-player",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React native awesome player for audio and video",
   "source": "src/index.js",
   "main": "dist/main.js",
