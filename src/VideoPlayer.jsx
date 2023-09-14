@@ -13,7 +13,7 @@ import Headers from "./VideoHeader";
 import VideoModal from "./VideoModal";
 
 let playerStatus = {};
-let action = { play: undefined, pause: undefined, isPlaying: false };
+let action = { play: undefined, pause: undefined };
 
 const VideoPlayer = ({
   title,

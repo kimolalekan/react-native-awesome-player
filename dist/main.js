@@ -251,11 +251,11 @@ const $0ffd94f5afb204a4$var$Header = ({ show: show, title: title, backHandler: b
                         style: styles.orientation,
                         onPress: ()=>changeScreenOrientation(),
                         children: orientation === "portrait" ? /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
-                            name: "phone-landscape",
+                            name: "phone-landscape-outline",
                             size: 30,
                             color: "#fff"
                         }) : /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
-                            name: "phone-portrait",
+                            name: "phone-portrait-outline",
                             size: 30,
                             color: "#fff"
                         })
@@ -407,8 +407,7 @@ const $c98252cb2f5308d3$var$dimension = (0, $gXNCa$reactnative.Dimensions).get("
 let $c98252cb2f5308d3$export$da5591f657d77787 = {};
 let $c98252cb2f5308d3$export$31eb53bd5b582a97 = {
     play: undefined,
-    pause: undefined,
-    isPlaying: false
+    pause: undefined
 };
 const $c98252cb2f5308d3$export$f503bc85d719e8b0 = ({ title: title, width: width, height: height, radius: radius = 0, backgroundColor: backgroundColor = "#000", progressColor: progressColor = "#3f3f3f", src: src, poster: poster, resizeMode: resizeMode = "contain", autoplay: autoplay = false, hideControls: hideControls = false, headers: headers, hideNavbar: hideNavbar = false, backHandler: backHandler = null, backIcon: backIcon = "chevron-back", showLibrary: showLibrary, library: library = [], libraryText: libraryText = "Episodes", autoplayLibrary: autoplayLibrary = true })=>{
     const [sizes, setSizes] = (0, $gXNCa$react.useState)($c98252cb2f5308d3$var$dimension);

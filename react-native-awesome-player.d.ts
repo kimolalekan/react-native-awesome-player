@@ -7,8 +7,6 @@ declare module "react-native-awesome-player" {
   }
 
   export interface VideoPlayer {
-    showLibrary?: boolean;
-    autoplay?: boolean;
     title?: string;
     width: number;
     height: number;
@@ -19,13 +17,12 @@ declare module "react-native-awesome-player" {
     headers?: Object;
     poster?: string;
     resizeMode?: string;
-    autoplay: boolean;
+    autoplay?: boolean;
     hideControls?: boolean;
-    headers?: Object;
-    hideNavbar?: false;
+    hideNavbar?: boolean;
     backHandler?: () => void;
     backIcon?: string;
-    showLibrary: boolean;
+    showLibrary?: boolean;
     library?: Array<Library>;
     libraryText?: string;
     autoplayLibrary?: boolean;
@@ -39,6 +36,5 @@ declare module "react-native-awesome-player" {
   export interface action {
     play?: () => void;
     pause?: () => void;
-    isPlaying?: boolean;
   }
 }
