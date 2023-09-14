@@ -1,2 +1,2 @@
-import { VideoPlayer, action, playerStatus } from "./VideoPlayer";
-export { VideoPlayer, action, playerStatus };
+import VideoPlayer from "./VideoPlayer";
+export { VideoPlayer };

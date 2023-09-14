@@ -12,9 +12,6 @@ import Controls from "./VideoControls";
 import Headers from "./VideoHeader";
 import VideoModal from "./VideoModal";
 
-let playerStatus = {};
-let action = { play: undefined, pause: undefined };
-
 const VideoPlayer = ({
   title,
   width,
@@ -51,11 +48,6 @@ const VideoPlayer = ({
   const [orientation, setOrientation] = useState("portrait");
 
   playerStatus = status;
-  action = {
-    isPlaying: status?.isPlaying,
-    play: () => video?.current?.playAsync(),
-    pause: () => video?.current?.pauseAsync(),
-  };
 
   const styles = StyleSheet.create({
     container: {
@@ -231,4 +223,4 @@ const VideoPlayer = ({
   );
 };
 
-export { VideoPlayer, action, playerStatus };
+export default VideoPlayer;

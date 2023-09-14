@@ -1,6 +1,5 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
-import { VideoPlayer, action, playerStatus } from "react-native-awesome-player";
+import { View, StyleSheet } from "react-native";
+import { VideoPlayer } from "react-native-awesome-player";
 
 const VideoDemo = () => {
   const library = [
@@ -31,10 +30,6 @@ const VideoDemo = () => {
     },
   ];
 
-  const playPause = () => {
-    action.isPlaying ? action.pause() : action.play();
-  };
-
   return (
     <View style={styles.container}>
       <VideoPlayer
@@ -52,15 +47,6 @@ const VideoDemo = () => {
         library={library}
         libraryText="Episodes"
       />
-      <View>
-        <TouchableOpacity onPress={playPause}>
-          {playerStatus.isPlaying ? (
-            <Icon name="play" color={"#fff"} size={30} />
-          ) : (
-            <Icon name="pause" color={"#fff"} size={30} />
-          )}
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
@@ -68,14 +54,8 @@ const VideoDemo = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15,
     marginTop: 100,
-  },
-  buttonGrid: {
-    flex: 1,
-    flexDirection: "row",
     alignItems: "center",
-    gap: 10,
   },
 });
 
