@@ -128,7 +128,10 @@ export default function Controls({
         <Col sm={orientation === "landscape" ? 1 : 2}>
           <Text style={styles.text}>{renderCountDown(duration / 1000)}</Text>
         </Col>
-        <Col sm={showLibrary ? librarySize : 0}>
+        <Col
+          smHidden={showLibrary === false}
+          sm={showLibrary ? librarySize : 0}
+        >
           <TouchableOpacity
             onPress={() => {
               video.current.pauseAsync();

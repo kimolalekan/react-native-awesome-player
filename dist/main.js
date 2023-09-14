@@ -28,7 +28,38 @@ $parcel$export(module.exports, "playerStatus", () => $c98252cb2f5308d3$export$da
 
 
 
-function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: video, orientation: orientation, isPlaying: isPlaying, duration: duration, countdown: countdown, setCountdown: setCountdown, timing: timing, setTiming: setTiming, iconColor: iconColor = "#fff", progressColor: progressColor = "#3f3f3f", showControls: showControls, showLibrary: showLibrary = false, toggleLibrary: toggleLibrary, libraryText: libraryText = "Episodes" }) {
+function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: video, orientation: orientation, isPlaying: isPlaying, duration: duration, countdown: countdown, setCountdown: setCountdown, timing: timing, setTiming: setTiming, iconColor: iconColor = "#fff", progressColor: progressColor = "#3f3f3f", radius: radius, showControls: showControls, showLibrary: showLibrary = false, toggleLibrary: toggleLibrary, libraryText: libraryText = "Episodes" }) {
+    const styles = (0, $gXNCa$reactnative.StyleSheet).create({
+        bg: {
+            backgroundColor: "rgba(0, 0, 0, 0.1)",
+            height: 40,
+            margin: 10,
+            marginBottom: 20,
+            paddingLeft: 10,
+            paddingRight: 10,
+            borderRadius: radius
+        },
+        text: {
+            position: "relative",
+            top: 13,
+            fontSize: 11,
+            color: "white",
+            textAlign: "center"
+        },
+        iconStyle: {
+            position: "relative",
+            top: 10
+        },
+        thumbStyle: {
+            width: 10,
+            height: 10
+        },
+        libraryIcon: {
+            position: "relative",
+            top: 10,
+            alignItems: "flex-end"
+        }
+    });
     const playAction = ()=>{
         const _countdown = countdown * 1000;
         if (duration === _countdown) video.current.setPositionAsync(0);
@@ -46,9 +77,10 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
     };
     const librarySize = orientation === "landscape" ? 2 : 2;
     const progressSize = orientation === "landscape" ? 7 : 5;
+    const progressLibrarySize = orientation === "landscape" ? 9 : 7;
     return /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.View), {
         style: [
-            $39b34a912a2382c7$var$styles.bg,
+            styles.bg,
             {
                 display: show === false ? "none" : "flex"
             }
@@ -58,20 +90,20 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
                 /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnativeflexboxgrid.Column), {
                     sm: 1,
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.View), {
-                        style: $39b34a912a2382c7$var$styles.button,
+                        style: styles.button,
                         children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.TouchableOpacity), {
-                            style: $39b34a912a2382c7$var$styles.button,
+                            style: styles.button,
                             onPress: playAction,
                             children: isPlaying ? /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
                                 name: "pause",
                                 color: iconColor,
                                 size: 20,
-                                style: $39b34a912a2382c7$var$styles.iconStyle
+                                style: styles.iconStyle
                             }) : /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
                                 name: "play",
                                 color: iconColor,
                                 size: 20,
-                                style: $39b34a912a2382c7$var$styles.iconStyle
+                                style: styles.iconStyle
                             })
                         })
                     })
@@ -79,12 +111,12 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
                 /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnativeflexboxgrid.Column), {
                     sm: orientation === "landscape" ? 1 : 2,
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.Text), {
-                        style: $39b34a912a2382c7$var$styles.text,
+                        style: styles.text,
                         children: renderCountDown(countdown ? countdown : 0)
                     })
                 }),
                 /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnativeflexboxgrid.Column), {
-                    sm: showLibrary ? progressSize : 8,
+                    sm: showLibrary ? progressSize : progressLibrarySize,
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$miblanchardreactnativeslider.Slider), {
                         value: timing,
                         maximumValue: Number(duration),
@@ -108,11 +140,12 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
                 /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnativeflexboxgrid.Column), {
                     sm: orientation === "landscape" ? 1 : 2,
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.Text), {
-                        style: $39b34a912a2382c7$var$styles.text,
+                        style: styles.text,
                         children: renderCountDown(duration / 1000)
                     })
                 }),
                 /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnativeflexboxgrid.Column), {
+                    smHidden: showLibrary === false,
                     sm: showLibrary ? librarySize : 0,
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.TouchableOpacity), {
                         onPress: ()=>{
@@ -120,10 +153,15 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
                             toggleLibrary();
                         },
                         children: orientation === "landscape" ? /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.Text), {
-                            style: $39b34a912a2382c7$var$styles.text,
+                            style: styles.text,
                             children: showLibrary && libraryText ? libraryText : ""
                         }) : /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.View), {
-                            style: $39b34a912a2382c7$var$styles.libraryIcon,
+                            style: [
+                                styles.libraryIcon,
+                                {
+                                    display: showLibrary ? "flex" : "none"
+                                }
+                            ],
                             children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
                                 name: "apps",
                                 color: "#fff",
@@ -136,38 +174,6 @@ function $39b34a912a2382c7$export$2e2bcd8739ae039({ show: show = true, video: vi
         })
     });
 }
-const $39b34a912a2382c7$var$styles = (0, $gXNCa$reactnative.StyleSheet).create({
-    bg: {
-        backgroundColor: "rgba(0, 0, 0, 0.1)",
-        height: 40,
-        margin: 10,
-        marginBottom: 20,
-        paddingLeft: 10,
-        paddingRight: 10,
-        borderRadius: 40
-    },
-    text: {
-        position: "relative",
-        top: 13,
-        fontSize: 11,
-        color: "white",
-        textAlign: "center"
-    },
-    iconStyle: {
-        position: "relative",
-        top: 10
-    },
-    thumbStyle: {
-        width: 10,
-        height: 10
-    },
-    libraryIcon: {
-        position: "relative",
-        top: 10,
-        alignItems: "flex-end"
-    }
-});
-
 
 
 
@@ -244,9 +250,14 @@ const $0ffd94f5afb204a4$var$Header = ({ show: show, title: title, backHandler: b
                     children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.TouchableOpacity), {
                         style: styles.orientation,
                         onPress: ()=>changeScreenOrientation(),
-                        children: /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.Image), {
-                            source: {},
-                            style: styles.icon
+                        children: orientation === "portrait" ? /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
+                            name: "phone-landscape",
+                            size: 30,
+                            color: "#fff"
+                        }) : /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, ($parcel$interopDefault($gXNCa$reactnativevectoriconsIonicons))), {
+                            name: "phone-portrait",
+                            size: 30,
+                            color: "#fff"
                         })
                     })
                 })
@@ -495,10 +506,6 @@ const $c98252cb2f5308d3$export$f503bc85d719e8b0 = ({ title: title, width: width,
     return /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsxs)((0, $gXNCa$reactnative.View), {
         style: styles.container,
         children: [
-            /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $gXNCa$reactnative.StatusBar), {
-                translucent: true,
-                barStyle: "light-content"
-            }),
             /*#__PURE__*/ (0, $gXNCa$reactjsxruntime.jsx)((0, $d2f8a4431a49184b$export$2e2bcd8739ae039), {
                 modal: modal,
                 toggleModal: toggleModal,
@@ -574,7 +581,7 @@ const $c98252cb2f5308d3$export$f503bc85d719e8b0 = ({ title: title, width: width,
                 },
                 onLoad: (v)=>{
                     setDuration(v.durationMillis);
-                    setCountdown(Math.round(v.durationMillis / 1000));
+                    // setCountdown(Math.round(v.durationMillis / 1000));
                     setLoading(false);
                     autoplay && autoplayLibrary && video.current.setStatusAsync({
                         positionMillis: 0,

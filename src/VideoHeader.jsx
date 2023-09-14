@@ -69,10 +69,11 @@ const Header = ({
             style={styles.orientation}
             onPress={() => changeScreenOrientation()}
           >
-            <Image
-              source={require("../assets/screen-rotate.png")}
-              style={styles.icon}
-            />
+            {orientation === "portrait" ? (
+              <Icon name={"phone-landscape"} size={30} color={"#fff"} />
+            ) : (
+              <Icon name={"phone-portrait"} size={30} color={"#fff"} />
+            )}
           </TouchableOpacity>
         </Col>
       </Row>
